@@ -40,13 +40,13 @@
 
         // Where we get bitcoinaverage data
         // or null if we run headless (not in browser)
-        url: "https://api.bitcoinaverage.com/ticker/all",
+        url: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD",
 
         // Which of bitcoinaverages value we use to present prices
-        marketRateVariable: "24h_avg",
+        marketRateVariable: "last",
 
         // Which currencies are in shown to the user
-        currencies: ["BTC", "USD", "EUR", "CNY"],
+        currencies: ["BTC", "USD"],
 
         // Special currency symbol artwork
         symbols: {},
@@ -181,7 +181,7 @@
             if(currency == "BTC") {
                 decimals = 8;
             } else {
-                decimals = 2;
+                decimals = 8;
             }
 
             var formatted = amount.toFixed(decimals);
